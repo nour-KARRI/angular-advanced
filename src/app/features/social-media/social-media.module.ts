@@ -5,8 +5,8 @@ import { SocialMediaRoutingModule } from './social-media-routing.module';
 import { PostsService } from './services/posts.service';
 import { PostsResolver } from './resolvers/posts.resolver';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
-import { SharedModule } from '../shared/shared.module';
 import { PostsListItemComponent } from './components/posts-list-item/posts-list-item.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
