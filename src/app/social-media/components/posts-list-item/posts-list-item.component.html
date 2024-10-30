@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-title>
+        <span highlight>{{post.title | titlecase}}</span>
+    </mat-card-title>
+    <mat-card-subtitle>
+        <span class="created-date">{{post.createdDate | date}}</span>
+        <p>{{userName| username}}</p>
+    </mat-card-subtitle>
+    <img mat-card-image *ngIf="post.imageUrl as imageUrl" src="{{post.imageUrl}}" [alt]="post.title">
+    <mat-card-content class="post-content">
+        {{post.content | shorten : 100}}
+       <app-comments [comments]="post.comments" (newComment)="onNewComment($event)"></app-comments> 
+    </mat-card-content>
+</mat-card>
