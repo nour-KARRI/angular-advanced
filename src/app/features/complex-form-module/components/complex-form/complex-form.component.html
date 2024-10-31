@@ -1,0 +1,69 @@
+<mat-card class="main-form" [formGroup]="mainForm">
+    <mat-card-title>Inscription</mat-card-title>
+
+    <mat-card class="form-card" formGroupName="personalInfo">
+        <mat-card-subtitle>Personal information</mat-card-subtitle>
+        <div class="form-row">
+            <mat-form-field appearance="fill">
+                <mat-label>FirstName</mat-label>
+                <input matInput type="text" placeholder="firstName" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>LastName</mat-label>
+                <input matInput type="text" placeholder="lastName" formControlName="lastName">     
+            </mat-form-field> 
+        </div>
+    </mat-card>
+
+    <mat-card class="form-card" formGroupName="contactPreference">
+        <mat-card-subtitle>How would you like to be contacted ?</mat-card-subtitle>
+        <mat-radio-group [formControl]="contactPreferenceCtrl">
+            <mat-radio-button (click)="onEmailFrom()">Email</mat-radio-button>
+            <mat-radio-button (click)="onPhoneFrom()">Phone</mat-radio-button>
+        </mat-radio-group>
+    </mat-card>
+
+
+    <mat-card class="form-card" [formGroup]="emailForm">
+        <mat-card-subtitle>Email</mat-card-subtitle>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="email" formControlName="email">
+       </mat-form-field>
+       <mat-form-field appearance="fill">
+            <mat-label>Confirm</mat-label>
+            <input matInput type="email" placeholder="confirm" formControlName="confirm">     
+       </mat-form-field>  
+    </mat-card>
+
+
+    <mat-card class="form-card">
+        <mat-card-subtitle>Phone</mat-card-subtitle>
+        <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput maxlength="10" type="text" placeholder="phone" [formControl]="phoneCtrl">     
+       </mat-form-field>  
+    </mat-card>
+
+
+    <mat-card class="form-card" [formGroup]="loginInfoForm">
+        <mat-card-subtitle>Login</mat-card-subtitle>
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" placeholder="username" formControlName="username">
+       </mat-form-field>
+       <div class="form-row">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Confirm</mat-label>
+          <input matInput type="password" placeholder="confirm" formControlName="password">
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <mat-card-actions style="text-align: center;">
+        <button color="primary" (click)="onSubmitForm()" [hidden]="mainForm.valid">SAVE</button>
+    </mat-card-actions>
+</mat-card>

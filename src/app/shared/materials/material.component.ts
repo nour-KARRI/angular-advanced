@@ -6,6 +6,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {} from '@angular/material/';
+
+
 
 @NgModule({
 exports:[
@@ -15,7 +20,9 @@ exports:[
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    MatRadioModule
 ]
 })
 export class MaterialComponent{
